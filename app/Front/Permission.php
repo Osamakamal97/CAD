@@ -15,6 +15,10 @@ class Permission extends Model
     protected $fillable = ['name'];
 
 
+    /*
+     *
+     * each permission belongs to many admins
+     */
     public function admins(){
         return $this->belongsToMany('App\Front\Admin','adminpermissions','permission_id','admin_id');
     }
